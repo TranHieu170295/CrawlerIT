@@ -41,8 +41,8 @@ def scrapedata(url):
 def index():
     conferences_data = None
     if request.method == 'POST':
-        url_data = request.form['url']
-        conferences_data = scrapedata(url_data)
+        url = request.form['url']
+        conferences_data = scrapedata(url)
     return render_template('index.html', conferences=conferences_data)
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=5500)
